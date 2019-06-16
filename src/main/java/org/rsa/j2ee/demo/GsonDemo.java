@@ -8,6 +8,9 @@ import java.util.List;
 import org.rsa.j2ee.demo.GsonDemo.Dto.Sub;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class GsonDemo {
 
@@ -33,6 +36,9 @@ public class GsonDemo {
 		System.out.println(json);
 		Dto rd = gson.fromJson(json, Dto.class);
 		System.out.println(rd.getD().get(3).getAa());
+		
+		JsonObject rd2 = gson.fromJson(json, JsonObject.class);
+		System.out.println(rd2.get("a"));
 	}
 
 	static class Dto {
